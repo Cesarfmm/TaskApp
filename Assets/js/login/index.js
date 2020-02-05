@@ -26,7 +26,7 @@ const ajax = (data, url, method)=>{
 
                 setTimeout(() => {
                     location = "UserController"
-                }, 2000);
+                }, 2000); 
             }else{
                 swalError()
             }   
