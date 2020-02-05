@@ -1,0 +1,65 @@
+<?php
+require_once './db/Connection.php';
+class Task{
+    public $id;
+    public $title;
+    public $description;
+    public $created_at;
+    public $update_at;
+
+    function __construct(){
+        $this->conn = Connection::conn();
+    }
+    function Task($id , $title ,$description ,$created_at ,$update_at){
+        $this->id=$id;
+        $this->title=$title;
+        $this->description= $description;
+        $this->created_at=$created_at;
+        $this->update_at= $update_at;
+    }
+    public function setTitle($title){
+        $this->title= $title;
+    }
+    public function setId($id){
+        $this->id = $id;
+    }
+    public function setDescription($description){
+        $this->description = $description;
+    }
+    public function setCreated_At($created_at){
+        $this->created_at = $created_at;
+    }
+    public function setUpdate_At($update_at){
+        $this->update_at= $update_at;
+    }
+
+    public function store_task(Task $id){      
+    }
+    public function update_task(Task $id){
+        
+    }
+    public function delete_task(Task $id){
+
+    }
+
+    public function New_task(Task $id ,$title ,$description,$created_at,$update_at){ 
+      
+    }
+    public function list_task(){
+     $task=[];
+     $sql = 'select * from task';
+     $stm = $this->conn->prepare($sql);
+     $stm->execute();
+     while($arr =$stm->fetch()):
+        $tas=new Task();
+        $tas->setId($arr['id']);
+        $tas->setTitle($arr['title']);
+        $tas->setDescription($arr['description']);
+        $tas->setCreated_At($arr['created_at']);
+        $tas->setUpdate_At($arr['update_at']);
+        array_push($task,$tas);
+     endwhile;
+        return $task;
+    }
+}
+?>
