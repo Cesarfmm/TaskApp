@@ -12,4 +12,13 @@
            //  $this->user->list_user();
            require_once './views/user/index.php';
         }
+
+        public function eliminar($id){
+            try{
+            $stm = $this->pdo->prepare("CALL ps_eliminar_user(?)");
+            $stm->execute(array($id));
+            }catch(Exception $e){
+                die($e->getMessage());
+            }
+        }
     }   

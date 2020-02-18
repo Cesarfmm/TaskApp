@@ -45,7 +45,7 @@
                                             <th><?= $user->user ?></th> 
                                             <td>
                                             <button class="btn btn-warning btn-sm" onclick="">Editar <i class="fas fa-edit"></i></button>
-                                            <button class="btn btn-danger btn-sm" onclick="preguntarYes()">Eliminar <i class="fas fa-trash"></i></button>
+                                            <button class="btn btn-danger btn-sm" onclick="deletePerson()">Eliminar <i class="fas fa-trash"></i></button>
                 
                                             </td>
                                         </tr>
