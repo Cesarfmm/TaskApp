@@ -5,7 +5,7 @@ require_once './db/Connection.php';
 class Users{
    public $id;
    public $name;
-   public $sur_names;
+   public $surnames;
    public $dni;
    public $email;
    public $user;
@@ -16,10 +16,10 @@ class Users{
         $this->conn = Connection::Conn();
     }
 
-    public function Users($id ,$name, $sur_names,$dni,$email,$user,$password){
+    public function Users($id ,$name, $surnames,$dni,$email,$user,$password){
         $this->id=$id;
         $this->name=$name;
-        $this->sur_names=$sur_names;
+        $this->surnames=$surnames;
         $this->dni= $dni;
         $this->email= $email;
         $this->user=$user;
@@ -38,8 +38,8 @@ class Users{
         $this->dni = $dni;
     }
     
-    public function setSur_names($sur_names){
-        $this->sur_names = $sur_names;
+    public function setSurnames($surnames){
+        $this->surnames = $surnames;
     }
     
     public function setEmail($email){
@@ -78,7 +78,7 @@ class Users{
           //  var_dump($arr);
            $user->setId($arr['id']);
            $user->setName($arr['name']);
-           $user->setSur_names($arr['sur_names']);
+           $user->setSurnames($arr['surnames']);
            $user->setDni($arr['dni']);
            $user->setEmail($arr['email']);
            $user->setUser($arr['user']);

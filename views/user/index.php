@@ -39,7 +39,7 @@
                                         <tr>
                                             <td><?= $user->id ?></td>
                                             <td><?= $user->name ?></td>
-                                            <td><?= $user->sur_names ?></td>
+                                            <td><?= $user->surnames ?></td>
                                             <td><?= $user->dni ?></td>
                                             <td><?= $user->email ?></td>
                                             <th><?= $user->user ?></th> 

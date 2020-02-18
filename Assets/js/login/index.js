@@ -6,7 +6,7 @@ const login = ()=>{
         email,
         password
     };
-    
+ 
     ajax(data, 'LoginController/login', 'post')
 }
 
