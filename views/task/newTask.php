@@ -11,8 +11,7 @@
 <!-- Default form subscription -->
 <form class="text-center border border-light p-5" action="">
 
-    <p class="h4 mb-4">New Task</p>
-    <p>  </p>
+    <p class="h4 mb-3">New Task</p>
     <input type="Id" id="Id" class="form-control mb-4" placeholder="Id">
     <input type="Title" id="title" class="form-control mb-4" placeholder="Title">
     <input type="Description" id="description" class="form-control mb-4" placeholder="Description">
