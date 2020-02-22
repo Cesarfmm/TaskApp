@@ -1,16 +1,10 @@
-function deletePerson(){ 
-    Swal({
-        position: 'top-end',
-        icon: 'success',
-        //title: 'Your work has been saved',
-       // showConfirmButton: false,
-        //timer: 1500
-      })
+const delet =()=>{
+    let id=document.getElementById('id').value;
 
-
-
-
-   
+    const data ={
+        id
+    }
+    console.log(data);
 }
 
 
