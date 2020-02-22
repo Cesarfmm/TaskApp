@@ -24,7 +24,7 @@
         </a>
         <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-555">
           <a class="dropdown-item" href="TaskController/newT">New Task</a>
-          <a class="dropdown-item" href="">New User</a>
+          <a class="dropdown-item" href="UserController/create">New User</a>
           <a class="dropdown-item" href="">Filter Task</a>
           <a class="dropdown-item" href="">About Task</a>
         </div>

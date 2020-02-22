@@ -9,9 +9,11 @@
         }
 
         public function index(){
-           //  $this->user->list_user();
            require_once './views/user/index.php';
         }
+       public function create(){
+        require_once './views/user/create.php';
+       }
 
         public function eliminar($id){
             try{
