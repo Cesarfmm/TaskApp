@@ -15,12 +15,16 @@
         require_once './views/user/create.php';
        }
 
-        public function eliminar($id){
-            try{
-            $stm = $this->pdo->prepare("CALL ps_eliminar_user(?)");
-            $stm->execute(array($id));
-            }catch(Exception $e){
-                die($e->getMessage());
-            }
-        }
+       public function Guardar(){
+           $user =new Users();
+           $user->id=$_REQUEST['id'];
+           $user->name=$_REQUEST['name'];
+           $user->surname=$_REQUEST['surname'];
+           $user->dni=$_REQUEST['dni'];
+           $user->email=$_REQUEST['email'];
+           $user->user=$_REQUEST['user'];
+           $user->password=$_REQUEST['password'];
+           
+       }
+     
     }   

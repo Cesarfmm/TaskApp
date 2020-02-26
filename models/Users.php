@@ -54,16 +54,27 @@ class Users{
     }
 
 
-    public function store_user(Users $user){
-
+    public function save_user(Users $user){
+         try{
+         $sql = "INSERT INTO users (id,name,surnames,dni,email,user,password)VALUES (?, ?, ?, ?, ?, ?, ?)";
+         $this->pdo->prepare($sql)->execute(array(
+             $user->id,
+             $user->name,
+             $user->surname,
+             $user->dni,
+             $user->email,
+             $user->user,
+             $user->password));
+             
+         }catch(Exception $e){
+            die($e->getMessage());
+         }
     }
     public function update_user(Users $user){
 
     }
     public function delete_user(Users $id){
-       $sql =' DELETE FROM users WHERE id =  ? ';
-       $stm = $this->conn->prepare($sql);
-       $stm->execute();
+    
     }
 
  
