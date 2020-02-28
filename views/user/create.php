@@ -26,7 +26,7 @@
                     <input class="form-control mb-4" placeholder="Enter your user" id="user" name="user">
                     <input  class="form-control mb-4" placeholder="Enter your password" id="password" name="password">
                     
-                    <button class="btn btn-info btn-block my-4" type="button" onclick="">create</button>
+                    <button class="btn btn-info btn-block my-4" type="button" onclick="guardar()">create</button>
                
                 </form>
             

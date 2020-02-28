@@ -24,6 +24,9 @@
            $user->email=$_REQUEST['email'];
            $user->user=$_REQUEST['user'];
            $user->password=$_REQUEST['password'];
+           $user->id > 0  ?   : $this->user->save_user($user);
+          // $this->user->Actualizar($lot)
+          header('Location: UserController');
            
        }
      
