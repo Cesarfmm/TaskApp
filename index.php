@@ -1,5 +1,5 @@
 <?php
-    define("LINKS",'http://localhost/TaskApp/Assets');
+    define("LINKS",'http://localhost:8080/TaskApp/Assets');
    
     require_once("controllers/TaskController.php");
     require_once("controllers/LoginController.php");

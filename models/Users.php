@@ -56,19 +56,25 @@ class Users{
 
     public function save_user(Users $user){
          try{
-         $sql = "INSERT INTO users (id,name,surnames,dni,email,user,password)VALUES (?, ?, ?, ?, ?, ?, ?)";
-         $this->pdo->prepare($sql)->execute(array(
-             $user->id,
-             $user->name,
-             $user->surname,
-             $user->dni,
-             $user->email,
-             $user->user,
-             $user->password));
+            $sql = "INSERT INTO users (name,surnames,dni,email,user,password)VALUES (?, ?, ?, ?, ?, ?)";
+            $stm = $this->conn->prepare($sql);
+            $stm->execute([
+                $user->name,
+                $user->surnames,
+                $user->dni,
+                $user->email,
+                $user->user,
+                $user->password]);
              
+            if($stm->rowCount() > 0 ):
+                return true;
+            endif;
+
          }catch(Exception $e){
             die($e->getMessage());
          }
+
+         return false;
     }
     public function update_user(Users $user){
 

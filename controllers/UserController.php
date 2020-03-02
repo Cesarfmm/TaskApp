@@ -15,18 +15,19 @@
         require_once './views/user/create.php';
        }
 
-       public function Guardar(){
+       public function store(){
+            $request_payload = file_get_contents('php://input');
+            $data = json_decode($request_payload);
+
            $user =new Users();
-           $user->id=$_REQUEST['id'];
-           $user->name=$_REQUEST['name'];
-           $user->surname=$_REQUEST['surname'];
-           $user->dni=$_REQUEST['dni'];
-           $user->email=$_REQUEST['email'];
-           $user->user=$_REQUEST['user'];
-           $user->password=$_REQUEST['password'];
-           $user->id > 0  ?   : $this->user->save_user($user);
-          // $this->user->Actualizar($lot)
-          header('Location: UserController');
+           $user->name= $data->name;
+           $user->surnames= $data->surnames;
+           $user->dni= $data->dni;
+           $user->email= $data->email;
+           $user->user= $data->user;
+           $user->password= $data->password;
+           
+            echo $this->user->save_user($user) ? json_encode(['error'=>false]) : json_encode(['error'=>true]);
            
        }
      

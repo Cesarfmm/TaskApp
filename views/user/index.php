@@ -16,8 +16,9 @@
             <h4 class="card-header">User / Dashboard</h4>
             <div class="card-body">
                 <div class="card container-fluid">
-                    <div class="card-header">
-                        Lista Usuarios
+                    <div class="card-header d-flex justify-content-between">
+                        <h3>User list</h3>
+                        <a href="UserController/create" class="btn btn-primary btn-sm">New user</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive text-nowrap">
