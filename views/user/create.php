@@ -22,9 +22,9 @@
                     <input class="form-control mb-4" placeholder="Enter your name" id="name" name="name">
                     <input class="form-control mb-4" placeholder="Enter your surname" id="surnames" name="surnames">
                     <input class="form-control mb-4" placeholder="Enter your dni" id="dni" name="dni">
-                    <input class="form-control mb-4" placeholder="Enter your email" id="email" name="email">
+                    <input type="email" class="form-control mb-4" placeholder="Enter your email" id="email" name="email">
                     <input class="form-control mb-4" placeholder="Enter your user" id="user" name="user">
-                    <input class="form-control mb-4" placeholder="Enter your password" id="password" name="password">
+                    <input type="password" class="form-control mb-4" placeholder="Enter your password" id="password" name="password">
                     <button class="btn btn-info btn-block my-4" type="button" onclick="guardar()">create</button>
                 </form>
             
