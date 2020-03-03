@@ -9,8 +9,8 @@
      public function index(){
         require_once './views/task/index.php';
      }
-     public function newT(){
-      require_once './views/task/newTask.php';
+     public function create(){
+      require_once './views/task/create.php';
      }
  }
 
