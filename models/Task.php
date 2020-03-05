@@ -10,12 +10,12 @@ class Task{
     function __construct(){
         $this->conn = Connection::conn();
     }
-    function Task($id , $title ,$description ,$created_at ,$update_at){
+
+    function Task($title ,$description, $id = 0){
         $this->id=$id;
         $this->title=$title;
-        $this->description= $description;
-        $this->created_at=$created_at;
-        $this->update_at= $update_at;
+        $this->description = $description;
+
     }
     public function setTitle($title){
         $this->title= $title;
@@ -44,17 +44,15 @@ class Task{
 
     public function save_task(Task $task){ 
           try{
-              $sql="INSERT INTO  task(title,description,created_at,update_at)VALUES (?,?,?,?);";
+              $sql="INSERT INTO  task(title,description,created_at,update_at)VALUES (?,?,NOW(),NOW());";
               $stm = $this->conn->prepare($sql);
-              $stm->execute([
-                   $task->title,
-                   $task->description,
-                   $task->created_at,
-                   $task->update_at
-              ]);
-              if($stm->rowcount()>0):
-                return true;
-              endif;
+              $stm->bindParam(1, $task->title, PDO::PARAM_STR);
+              $stm->bindParam(2, $task->description, PDO::PARAM_STR);
+
+              $stm->execute();
+
+              return $stm->rowcount() > 0 ? true : false;
+
           }catch(Exception $e){
             die($e->getMessage());
           }

@@ -13,15 +13,12 @@
 
     <p class="h4 mb-3">New Task</p>
     <input  id="title" class="form-control mb-4" placeholder="Title">
-    <input  id="description" class="form-control mb-4" placeholder="description">
-    <input  id="created_at" class="form-control mb-4" placeholder="created_at">
-    <input  id="update_at" class="form-control mb-4" placeholder="update_at">
-    <button class="btn btn-info btn" type="submit" onclick="guardar()">create</button>
+    <textarea  id="description" class="form-control mb-4" size="4" placeholder="description"></textarea>
+    
+    <a class="btn btn-light" href="./">Cancelar</a>
+    <button class="btn btn-info" type="button" onclick="guardar()">create</button>
 
-
-    <div id="contentMessage">
-           
-    </div>
+    <div id="contentMessageTask"></div>
 </form>
 <!-- Default form subscription -->
 <?php require_once './views/content/footer.php' ?>

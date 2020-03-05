@@ -12,7 +12,6 @@ const login = ()=>{
 
 const ajax = (data, url, method)=>{
     let xmlHttp = new XMLHttpRequest();
-
     xmlHttp.open(method,url)
     xmlHttp.setRequestHeader('Content-Type','application/json')
     xmlHttp.send(JSON.stringify(data))

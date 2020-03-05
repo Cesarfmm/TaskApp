@@ -17,7 +17,7 @@
                 <div class="card container-fluid">
                     <div class="card-header d-flex justify-content-between" >
                       <h3>Task list</h3>
-                      <a href="TaskController/create" class="btn btn-primary btn-sm">New Task</a>
+                      <a href="../TaskController/create" class="btn btn-primary btn-sm">New Task</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive text-nowrap">
