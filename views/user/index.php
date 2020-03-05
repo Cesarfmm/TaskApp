@@ -19,7 +19,6 @@
                     <div class="card-header d-flex justify-content-between">
                         <h3>User list</h3>
                         <a href="UserController/create" class="btn btn-primary btn-sm">New user</a>
-                        <a href="TaskController/create" class="btn btn-primary btn-sm">New task</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive text-nowrap">

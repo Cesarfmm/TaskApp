@@ -34,7 +34,7 @@
                         </div>
                         <div>
                             <!-- Forgot password -->
-                            <a href="">Forgot password?</a>
+                          
                         </div>
                     </div>
                     <button class="btn btn-info btn-block my-4" type="button" onclick="login()">LOG IN</button>
