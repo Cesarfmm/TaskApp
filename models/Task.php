@@ -42,8 +42,23 @@ class Task{
 
     }
 
-    public function New_task(Task $id ,$title ,$description,$created_at,$update_at){ 
-      
+    public function save_task(Task $task){ 
+          try{
+              $sql="INSERT INTO  task(title,description,created_at,update_at)VALUES (?,?,?,?);";
+              $stm = $this->conn->prepare($sql);
+              $stm->execute([
+                   $task->title,
+                   $task->description,
+                   $task->created_at,
+                   $task->update_at
+              ]);
+              if($stm->rowcount()>0):
+                return true;
+              endif;
+          }catch(Exception $e){
+            die($e->getMessage());
+          }
+        return false;
     }
     public function list_task(){
      $task=[];
