@@ -14,7 +14,15 @@
      }
 
      public function store(){
-        
+      $request_payload= file_get_contents('php://input');
+      $data = json_decode($request_payload);
+      $task =new Task();
+      $task->title=$data->title;
+      $task->description=$data->description;
+      $task->created_at=$data->created_at;
+      $task->update_at=$data->update_at;
+      echo $this->task->save_task($task) ? json_encode(['error'=>false]) : json_encode(['error'=>true]);
+      echo $data;
      }
  }
 

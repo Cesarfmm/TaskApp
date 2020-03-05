@@ -1,17 +1,18 @@
 const guardar = () => {
      let title = document.getElementById('title').value,
-     description = document.getElementById('description').values, created_at = document.getElementById('created_at').value,
-     update_at = document.getElementById('update_at').value;
+     description = document.getElementById('description').value, 
+     created_at = document.getElementById('created_at').value,
+     update_at = document.getElementById('update_at').value
       
-     const data={
-        id,
+     let data={
         title,
         description,
         created_at,
         update_at
      }
-     ajax(data, '','');
+     ajax(data, '../TaskController/store','post');
 }
+console.log(data)
 const ajax = (data, url, method)=>{
     let xmlHttp = new XMLHttpRequest();
     xmlHttp.open(method,url)
@@ -26,9 +27,9 @@ const ajax = (data, url, method)=>{
          resp.error ? renderMessage(resp.error, 'error save Task') :  renderMessage(resp.error, 'Task save successfully')
       }
     } 
-    
+   
 }
-function renderMessage(status, message){
+/*function renderMessage(status, message){
    let contentMessage =document.getElementById('contentMessage')
    let showMessage = `
    <div class="alert alert-${!status ? 'success' : 'danger'}">
@@ -38,6 +39,6 @@ function renderMessage(status, message){
    contentMessage.innerHTML=showMessage;
     setTimeout(()=>{
        contentMessage.innerHTML = null
-       location.href= '../UserController';
+       location.href= '../TaskController';
        },2000);
-}
+}*/
