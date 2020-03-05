@@ -12,6 +12,10 @@
      public function create(){
       require_once './views/task/create.php';
      }
+
+     public function store(){
+        
+     }
  }
 
 ?>

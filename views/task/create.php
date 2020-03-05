@@ -18,6 +18,11 @@
     <input  id="Created At" class="form-control mb-4" placeholder="Created At">
     <input  id="update At" class="form-control mb-4" placeholder="Update  At">
     <button class="btn btn-info btn" type="submit" onclick="">create</button>
+
+
+    <div id="contentMessage">
+           
+    </div>
 </form>
 <!-- Default form subscription -->
 <?php require_once './views/content/footer.php' ?>
