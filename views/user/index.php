@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Users</title>
     <?php require_once './views/content/header.php' ?>
-
-
 </head>
 <body>
    <?php require_once "./views/layout/navbar.php" ?>
@@ -36,7 +34,6 @@
                                 </thead>
                                 <tbody>
                                     <?php foreach($this->user->list_user() as $user): ?>
-                                 
                                         <tr>
                                             <td><?= $user->id ?></td>
                                             <td><?= $user->name ?></td>
@@ -46,8 +43,7 @@
                                             <th><?= $user->user ?></th> 
                                             <td>
                                             <button class="btn btn-warning btn-sm" onclick="">Editar <i class="fas fa-edit"></i></button>
-                                            <button class="btn btn-danger btn-sm" onclick="deletePerson()">Eliminar <i class="fas fa-trash"></i></button>
-                
+                                            <button class="btn btn-danger btn-sm" onclick="eliminar()">Eliminar <i class="fas fa-trash"></i></button>
                                             </td>
                                         </tr>
                                         
@@ -61,6 +57,7 @@
         </div>
     </div>
     <script src="/TaskApp/Assets/js/user/index.js"></script>
+    <script src="/TaskApp/Assets/js/create/delete.js"></script>
     <?php require_once './views/content/footer.php' ?>
 
       

@@ -14,6 +14,14 @@
        public function create(){
         require_once './views/user/create.php';
        }
+       public function remove(){
+            $request_payload = file_get_contents('php://input');
+            $data = json_decode($request_payload);
+            $user =new Users();
+            $user=new $data->id;
+
+       }
+
 
        public function store(){
             $request_payload = file_get_contents('php://input');

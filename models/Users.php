@@ -80,7 +80,13 @@ class Users{
 
     }
     public function delete_user(Users $id){
-    
+            try{
+                $sql='DELETE from users where id = ?';
+                $stm = $this->conn->prepare($sql);
+                $stm->execute($id);
+            }catch(Exception $e){
+                die($e->getMessage());
+            }
     }
 
  
