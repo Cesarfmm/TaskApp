@@ -58,14 +58,13 @@ class Users{
          try{
             $sql = "INSERT INTO users (name,surnames,dni,email,user,password)VALUES (?, ?, ?, ?, ?, ?)";
             $stm = $this->conn->prepare($sql);
-            $stm->execute([
-                $user->name,
-                $user->surnames,
-                $user->dni,
-                $user->email,
-                $user->user,
-                $user->password]);
-             
+            $stm->bindParam(1, $user->name, PDO::PARAM_STR);
+            $stm->bindParam(2, $user->surnames, PDO::PARAM_STR);
+            $stm->bindParam(3, $user->dni, PDO::PARAM_STR);
+            $stm->bindParam(4, $user->email, PDO::PARAM_STR);
+            $stm->bindParam(5, $user->user, PDO::PARAM_STR);
+            $stm->bindParam(6, $user->password, PDO::PARAM_STR);
+            $stm->execute();
             if($stm->rowCount() > 0 ):
                 return true;
             endif;
@@ -88,9 +87,6 @@ class Users{
                 die($e->getMessage());
             }
     }
-
- 
-    
     public function list_user(){
         $users = [];
         $sql = 'select * from users';

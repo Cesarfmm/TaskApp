@@ -42,7 +42,7 @@
                                        <td><?= $task->update_at ?></td>
                                        <td>
                                     <a class="btn btn-warning btn-sm" onclick="">Editar <i class="fas fa-edit"></i></a>
-                                    <a class="btn btn-danger btn-sm" onclick=")">Eliminar <i class="fas fa-trash"></i></a>
+                                    <a class="btn btn-danger btn-sm" onclick="">Eliminar <i class="fas fa-trash"></i></a>
                                         </td>
                                        </tr>
                                     <?php endforeach; ?>
