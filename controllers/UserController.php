@@ -18,7 +18,7 @@
             $request_payload = file_get_contents('php://input');
             $data = json_decode($request_payload);
             $user =new Users();
-            $user-> $data->id;
+            $user->id= $data->id;
             echo $this->user->delete_user($user) ? json_encode(['error'=>false]) : json_encode(['error'=>true]);
 
        }
@@ -27,7 +27,6 @@
        public function store(){
             $request_payload = file_get_contents('php://input');
             $data = json_decode($request_payload);
-
            $user =new Users();
            $user->name= $data->name;
            $user->surnames= $data->surnames;

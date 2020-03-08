@@ -10,12 +10,10 @@ class Task{
     function __construct(){
         $this->conn = Connection::conn();
     }
-
     function Task($title ,$description, $id = 0){
         $this->id=$id;
         $this->title=$title;
         $this->description = $description;
-
     }
     public function setTitle($title){
         $this->title= $title;
@@ -48,11 +46,8 @@ class Task{
               $stm = $this->conn->prepare($sql);
               $stm->bindParam(1, $task->title, PDO::PARAM_STR);
               $stm->bindParam(2, $task->description, PDO::PARAM_STR);
-
               $stm->execute();
-
               return $stm->rowcount() > 0 ? true : false;
-
           }catch(Exception $e){
             die($e->getMessage());
           }
