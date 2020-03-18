@@ -12,7 +12,11 @@
      public function create(){
       require_once './views/task/create.php';
      }
-
+       public function remove(){
+       // $res = $this->task->
+       $res = $this->task->delete_task($_REQUEST['id']);
+       echo $res;
+       }
      public function store(){
       $request_payload= file_get_contents('php://input');
       $data = json_decode($request_payload);

@@ -36,8 +36,15 @@ class Task{
     public function update_task(Task $id){
         
     }
-    public function delete_task(Task $id){
-
+    public function delete_task($id){
+           try{
+            $sql='DELETE from task where id = ?';
+            $stm = $this->conn->prepare($sql);
+            $stm->execute(array($id));
+            return $stm;
+           }catch(Exception $e){
+              die($e->getMessage());
+           }
     }
 
     public function save_task(Task $task){ 

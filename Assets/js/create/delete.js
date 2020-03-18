@@ -1,5 +1,4 @@
- const eliminar = ()=>{
-    let id = document.getElementById('id').value;
+ function eliminar (id){
     const data = {
           id
     };
@@ -15,20 +14,27 @@
 
     xmlHttp.onreadystatechange = function (){
         if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-            let response = xmlHttp.responseText
-              if(response == 1){
-                swalSuccess(data);
-              }
+          let resp = xmlHttp.responseText
+          console.log(resp);
+          if(resp == 1){
+            swalSucces(data);
+
+            setTimeout(() => {
+               location = "UserController"
+           }, 3000); 
+          }
+         
+           
     }
  }
 
 }
-const swalSuccess=(data)=>{
-    swal({
-        type: 'delete',
-        title: 'delete user!',
-        text: `user delete, ${data.id}`,
-        timer: 2000
-    })
+
+const swalSucces =(data)=>{
+   swal({
+      type: 'success',
+      title: 'Success!',
+      text: `Delete User, ${data.id}`,
+      timer: 3000
+  })
 }
-//<?php echo $user->id; ?>

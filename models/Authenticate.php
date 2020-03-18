@@ -6,7 +6,7 @@ class Authenticate{
         public $password;
         public $conn;
         
-        public function __construct($email='cesarmatarrita484@gmail.com' , $password='123'){
+        public function __construct($email='?' , $password='?'){
           $this->$email=$email;
           $this->$password=$password;
           $this->conn=Connection::conn();

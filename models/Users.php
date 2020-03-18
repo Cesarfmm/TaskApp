@@ -78,11 +78,13 @@ class Users{
     public function update_user(Users $user){
 
     }
-    public function delete_user(Users $id){
+    public function delete_user($id){
             try{
                 $sql='DELETE from users where id = ?';
                 $stm = $this->conn->prepare($sql);
-                $stm->execute($id);
+                $stm->bindParam(1, $id, PDO::PARAM_STR);
+                $stm->execute();
+                return $stm->rowcount() > 0 ? true : false;
             }catch(Exception $e){
                 die($e->getMessage());
             }
