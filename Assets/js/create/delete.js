@@ -2,39 +2,64 @@
     const data = {
           id
     };
-    console.log(data);
-    ajax(data, 'UserController/remove', 'post')
+    
+    swalSucces(data)
  }
+
+
  const ajax=(data,url,method)=>{
     let xmlHttp = new  XMLHttpRequest();
     xmlHttp.open(method,url)
     xmlHttp.setRequestHeader('Content-Type','application/json')
     xmlHttp.send(JSON.stringify(data))
-
-
+    
     xmlHttp.onreadystatechange = function (){
         if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
           let resp = xmlHttp.responseText
-          console.log(resp);
-          if(resp == 1){
-            swalSucces(data);
-
-            setTimeout(() => {
-               location = "UserController"
-           }, 3000); 
+          console.log(xmlHttp.responseText, "resp backend")
+          if(resp){
+            swal(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+            )
           }
-         
-           
+          else{
+            swal(
+              'Cancel!',
+              'Your file not has been deleted.',
+              'error'
+            )
+          }
+          
+      }
     }
- }
-
 }
 
 const swalSucces =(data)=>{
    swal({
-      type: 'success',
-      title: 'Success!',
-      text: `Delete User, ${data.id}`,
-      timer: 3000
-  })
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      console.log(result)
+      if (result) {
+        ajax(data, 'UserController/remove', 'post')
+        
+      }
+
+    })
+    /*.catch(err=>{
+      swal(
+        'Cancel!',
+        'Your file not has been deleted.',
+        'error'
+      )
+    
+    })*/
+  
 }
