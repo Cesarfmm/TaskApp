@@ -12,6 +12,9 @@
      public function create(){
       require_once './views/task/create.php';
      }
+     public function editTask(){
+        require_once './views/task/edit.php';
+     }
        public function remove(){
        // $res = $this->task->
        $res = $this->task->delete_task($_REQUEST['id']);

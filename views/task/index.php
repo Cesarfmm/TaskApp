@@ -41,7 +41,11 @@
                                        <td><?= $task->created_at ?></td>
                                        <td><?= $task->update_at ?></td>
                                        <td>
-                                    <a class="btn btn-warning btn-sm" onclick="">Editar <i class="fas fa-edit"></i></a>
+                                    <a href="../TaskController/editTask" class="btn btn-warning btn-sm" >Editar <i class="fas fa-edit"></i></a>
+
+
+
+                                  
                                     <a class="btn btn-danger btn-sm" href="../TaskController/remove" onclick="remove(<?php echo $task->id; ?>)"  >Eliminar <i class="fas fa-trash"></i></a>
                                         </td>
                                        </tr>

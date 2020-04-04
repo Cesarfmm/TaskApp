@@ -39,6 +39,6 @@ function renderMessage(status, message){
    contentMessage.innerHTML=showMessage;
    setTimeout(()=>{
        contentMessage.innerHTML = null
-       location.href= '../TaskController';
+       location.href= '../TaskController/index';
    },2000);
 }

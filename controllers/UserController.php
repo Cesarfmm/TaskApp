@@ -14,11 +14,12 @@
        public function create(){
         require_once './views/user/create.php';
        }
+
+       public function edit(){
+         require_once './views/user/edit.php';
+       }
+
        public function remove(){
-           // $request_payload = file_get_contents('php://input');
-           // $data = json_decode($request_payload);
-           // $data->id;
-           // echo $this->user->delete_user($data) ? json_encode(['error'=>false]) : json_encode(['error'=>true]);
             $data = file_get_contents('php://input');
             $result = json_decode($data);
             echo $this->user->delete_user($result->id);

@@ -24,7 +24,7 @@ const ajax = (data, url, method)=>{
                 swalSuccess(data)
 
                 setTimeout(() => {
-                    location = "UserController"
+                    location = "TaskController/index"
                 }, 2000); 
             }else{
                 swalError()

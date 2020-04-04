@@ -42,7 +42,6 @@
                                             <td><?= $user->email ?></td>
                                             <th><?= $user->user ?></th> 
                                             <td>
-                                            <button class="btn btn-warning btn-sm" onclick="">Editar <i class="fas fa-edit"></i></button>
                                             <button class="btn btn-danger btn-sm" onclick="eliminar(<?= $user->id ?>)">Eliminar <i class="fas fa-trash"></i></button>
                                             </td>
                                         </tr>
