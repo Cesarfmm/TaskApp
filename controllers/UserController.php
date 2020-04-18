@@ -6,6 +6,7 @@
 
         function __construct(){
             $this->user = new Users();
+            
         }
 
         public function index(){
@@ -23,7 +24,6 @@
             $data = file_get_contents('php://input');
             $result = json_decode($data);
             echo $this->user->delete_user($result->id);
-    
        }
 
 

@@ -16,10 +16,11 @@
         require_once './views/task/edit.php';
      }
        public function remove(){
-       // $res = $this->task->
-       $res = $this->task->delete_task($_REQUEST['id']);
-       echo $res;
+         $data = file_get_contents('php://input');
+         $result = json_decode($data);
+         echo $this->task->delete_task($result->id);
        }
+
      public function store(){
       $request_payload= file_get_contents('php://input');
       $data = json_decode($request_payload);

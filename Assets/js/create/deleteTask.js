@@ -1,12 +1,9 @@
- function eliminar (id){
+function eliminar (id){
     const data = {
           id
     };
-    
     swalSucces(data)
-
  }
-
 
  const ajax=(data,url,method)=>{
     let xmlHttp = new  XMLHttpRequest();
@@ -16,7 +13,8 @@
     
     xmlHttp.onreadystatechange = function (){
         if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-         let resp = xmlHttp.responseText
+          let resp = xmlHttp.responseText
+          console.log(xmlHttp.responseText, "resp backend")
           if(resp){
             swal(
               'Deleted!',
@@ -36,19 +34,22 @@
     }
 }
 
-const swalSucces = (data) =>{
-   swal({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-      if (result) {
-        ajax(data, '../UserController/remove', 'post')
-      }
 
-    })
-}
+const swalSucces =(data)=>{
+    swal({
+       title: 'Are you sure?',
+       text: "You won't be able to revert this!",
+       icon: 'warning',
+       showCancelButton: true,
+       confirmButtonColor: '#3085d6',
+       cancelButtonColor: '#d33',
+       confirmButtonText: 'Yes, delete it!'
+     }).then((result) => {
+       console.log(result)
+       if (result) {
+          ajax(data, '../TaskController/remove', 'post')
+         
+       }
+ 
+     }) 
+ }

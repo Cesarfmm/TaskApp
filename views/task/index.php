@@ -6,21 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Task</title>
     <?php require_once './views/content/header.php' ?>
-
+    
 </head>
 <body>
    <?php require_once "./views/layout/navbar.php" ?>
     <div class="container-fluid my-3">
         <div class="card">
             <h4 class="card-header">Task / Dashboard</h4>
-            <div class="card-body">
+            <div class="card-body">             
                 <div class="card container-fluid">
                     <div class="card-header d-flex justify-content-between" >
                       <h3>Task list</h3>
                       <a href="../TaskController/create" class="btn btn-primary btn-sm">New Task</a>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive text-nowrap">
+                        <div  class="table-responsive text-nowrap">
                             <table class="table table-sm hover">
                                 <thead class="black white-text">
                                     <tr>
@@ -40,14 +40,10 @@
                                        <td><?= $task->description ?></td>
                                        <td><?= $task->created_at ?></td>
                                        <td><?= $task->update_at ?></td>
-                                       <td>
-                                    <a href="../TaskController/editTask" class="btn btn-warning btn-sm" >Editar <i class="fas fa-edit"></i></a>
-
-
-
-                                  
-                                    <a class="btn btn-danger btn-sm" href="../TaskController/remove" onclick="remove(<?php echo $task->id; ?>)"  >Eliminar <i class="fas fa-trash"></i></a>
-                                        </td>
+                                        <td>
+                                        <a href="../TaskController/editTask" class="btn btn-warning btn-sm" >Editar <i class="fas fa-edit"></i></a>
+                                        <button class="btn btn-danger btn-sm" onclick="eliminar(<?= $task->id ?>)">Eliminar <i class="fas fa-trash"></i></button>
+                                        </td>    
                                        </tr>
                                     <?php endforeach; ?>
                                 </tbody>
@@ -58,7 +54,7 @@
             </div>
         </div>
     </div>
-    <script src="/TaskApp/Assets/js/user/index.js"></script>
+    <script src="/TaskApp/Assets/js/create/deleteTask.js"></script>
     <?php require_once './views/content/footer.php' ?>
 </body>
 </html>

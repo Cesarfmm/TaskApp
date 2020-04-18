@@ -71,7 +71,7 @@
         contentMessage.innerHTML = showMessage;
         setTimeout(()=>{
             contentMessage.innerHTML = null
-            location.href= '../UserController';
+            location.href= '../UserController/index';
         },2000);
     }
 </script>

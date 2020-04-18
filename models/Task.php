@@ -40,8 +40,9 @@ class Task{
            try{
             $sql='DELETE from task where id = ?';
             $stm = $this->conn->prepare($sql);
-            $stm->execute(array($id));
-            return $stm;
+            $stm->bindParam(1, $id, PDO::PARAM_STR);
+            $stm->execute();
+            return $stm->rowcount() > 0 ? true : false;
            }catch(Exception $e){
               die($e->getMessage());
            }

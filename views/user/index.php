@@ -40,7 +40,7 @@
                                             <td><?= $user->surnames ?></td>
                                             <td><?= $user->dni ?></td>
                                             <td><?= $user->email ?></td>
-                                            <th><?= $user->user ?></th> 
+                                            <td><?= $user->user ?></td> 
                                             <td>
                                             <button class="btn btn-danger btn-sm" onclick="eliminar(<?= $user->id ?>)">Eliminar <i class="fas fa-trash"></i></button>
                                             </td>
@@ -55,8 +55,9 @@
             </div>
         </div>
     </div>
-    <script src="/TaskApp/Assets/js/user/index.js"></script>
     <script src="/TaskApp/Assets/js/create/delete.js"></script>
+    <script src="/TaskApp/Assets/js/user/index.js"></script>
+   
     <?php require_once './views/content/footer.php' ?>
 
       
