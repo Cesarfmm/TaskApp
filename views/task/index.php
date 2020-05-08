@@ -46,14 +46,16 @@
                                         </td>    
                                        </tr>
                                     <?php endforeach; ?>
+                                
+                          
                                 </tbody>
-                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <script src="/TaskApp/Assets/js/create/deleteTask.js"></script>
     <?php require_once './views/content/footer.php' ?>
 </body>
