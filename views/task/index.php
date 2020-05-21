@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Task</title>
-    <?php require_once './views/content/header.php' ?>
-    
+    <?php require_once './views/content/header.php' ?>  
 </head>
 <body>
    <?php require_once "./views/layout/navbar.php" ?>
@@ -55,7 +54,6 @@
             </div>
         </div>
     </div>
-
     <script src="/TaskApp/Assets/js/create/deleteTask.js"></script>
     <?php require_once './views/content/footer.php' ?>
 </body>

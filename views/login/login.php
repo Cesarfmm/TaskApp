@@ -21,15 +21,12 @@
                     <!-- Email -->
                     <input type="email" class="form-control mb-4" placeholder="Enter you email" id="email" name="email">
                     <input type="password" class="form-control mb-4" placeholder="Enter you Password" id="password" name="password">
-                    <!-- Password -->   
-                    <?php
-                    include("ValidarLogin.php");
-                    ?>
                     <div class="d-flex justify-content-around">
                         <div>
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
-                                <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                    
+
+                          
                             </div>
                         </div>
                         <div>
