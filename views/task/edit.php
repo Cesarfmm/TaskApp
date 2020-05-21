@@ -3,38 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://localhost:8080/TaskApp/Assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://localhost:8080/TaskApp/Assets/css/mdb.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    
-    <title>Edit Task</title>
-  
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome</title>
+    <?php require_once './views/content/header.php' ?>
+   
+ 
 </head>
+
 <body>
-    <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
-           <a class="navbar-brand" href="">Formulario de editar Tareas</a>
-    </nav>
-    <?php    require_once './models/Task.php';  ?>
-    <div class="container">
-        <div class="row pt-5">
-        <div class="col-md-3">
-             <div class="card">
-                <h4 class="card-header blue lighten-1 text-white">Task</h4>
-                <form class="card-body">
-                   <div class="form-group">
-                       <input name="title" value =" <?php echo $task->title;  ?> "  id="title" class="form-control" placeholder="title" >
-                   </div>
-                
-                   <div class="form-group">
-                    <input name="description" value ="<?php echo $task->description; ?>" id="description" class="form-control" placeholder="description" >
-                   </div>
-                  
-                    <button type="submit" class="btn btn-success btn-block" onclick="">add user new</button>
-                </form>
-             </div>
-        </div>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Default form contact -->
+<form class="text-center border border-light p-5" action="#!">
+
+    <p class="h4 mb-4">Edit Task</p>
+
+    <!-- Name -->
+    <input type="text" id="defaultContactFormTitle" class="form-control mb-4" placeholder="Title">
+    <!-- Message -->
+    <div class="form-group">
+        <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
     </div>
 
+    <!-- Send button -->
+    <button class="btn btn-info btn-block" type="submit">Send</button>
+
+</form>
+<!-- Default form contact -->
+<?php require_once './views/content/footer.php' ?>
 </body>
 </html>
+
+
