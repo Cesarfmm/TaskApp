@@ -23,7 +23,7 @@
           aria-haspopup="true" aria-expanded="false">Information User
         </a>
         <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-555">
-          <a class="dropdown-item" href="">Filter Task</a>
+          <a class="dropdown-item" href="/TaskApp/TaskController/flterTask">Filter Task</a>
           <a class="dropdown-item" href="">About Task</a>
         </div>
       </li>

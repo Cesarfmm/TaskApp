@@ -15,6 +15,10 @@
      public function editTask(){
         require_once './views/task/edit.php';
      }
+
+     public function flterTask(){
+      require_once './views/task/filter.php';
+   }
        public function remove(){
          $data = file_get_contents('php://input');
          $result = json_decode($data);

@@ -9,6 +9,9 @@
 </head>
 <body>
 <!-- Default form subscription -->
+<div class="row">
+
+</div>
 <form class="text-center border border-light p-5" action="">
 
     <p class="h4 mb-3">New Task</p>

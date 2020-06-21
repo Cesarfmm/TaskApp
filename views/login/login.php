@@ -24,9 +24,6 @@
                     <div class="d-flex justify-content-around">
                         <div>
                             <div class="custom-control custom-checkbox">
-                    
-
-                          
                             </div>
                         </div>
                         <div>
@@ -41,9 +38,7 @@
             </div>
         </div>
     </div>
-
 <?php require_once './views/content/footer.php' ?>
-
 <script src="<?= constant('LINKS')?>/js/login/index.js"></script>
 </body>
 </html>
